@@ -66,7 +66,7 @@ def read_config():
         config_data = yaml.safe_load(file) or {}
     return config_data
 
-orvus = read_config()
+config = read_config()
 
 def read_user_file(user_id):
     file_path = f"Users/{user_id}.yml"
@@ -112,7 +112,7 @@ def get_placeholder_value(context, key, for_image=False):
         if key == 'datetime-datelong':
             return now.strftime('%d %B %Y')
         elif key == 'datetime-dateshort':
-            date_format = orvus.get('Placeholders', {}).get('DateFormat', '%d/%m/%y')
+            date_format = config.get('Placeholders', {}).get('DateFormat', '%d/%m/%y')
             return now.strftime(date_format)
         elif key == 'datetime-time24':
             return now.strftime('%H:%M')
