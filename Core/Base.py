@@ -21,7 +21,7 @@ class Base(commands.Cog):
         activity_name = config.get('Bot', {}).get('Status', {}).get('Text')
         activity_type = getattr(disnake.ActivityType, config.get('Bot', {}).get('Status', {}).get('Activity'))
         await self.bot.change_presence(activity=disnake.Activity(name=activity_name, type=activity_type))
-        print("...Ready for use")
+        print("Invite Link: https://discord.com/oauth2/authorize?scope=bot+applications.commands&client_id={self.bot.user.id} \n...Ready for use")
 
 def setup(bot: commands.Bot):
     bot.add_cog(Base(bot))
