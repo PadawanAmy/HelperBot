@@ -7,3 +7,5 @@ Bot:
 Ignore:
   Channels: []
   Categories: []
+Placeholders:
+  DateFormat: "%d/%m/%y"
