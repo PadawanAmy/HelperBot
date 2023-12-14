@@ -1,0 +1,53 @@
+ExampleResponse:
+  Type: TEXT
+  Response: "This is the example response message!"
+  Triggers:
+  - "Helper bot test"
+  - "Testing Helper Bot"
+  Strict: false
+  Reply: true
+  Cooldown: 30
+
+ExampleRandom:
+  Type: RANDOM
+  Responses:
+  - "Random Response 1"
+  - "Random Response 2"
+  - "Random Response 3"
+  - "Random Response 4"
+  - "Random Response 5"
+  Triggers:
+  - "Random Response"
+  Strict: false
+
+ExampleEmbed:
+  Type: EMBED
+  Embed:
+    Image: "https://padawanamy.com/assets/img/martin.jpg"
+    Thumbnail: "{author-avatar}"
+    Description: "Hello there {author-mention}\nThank you for using Helper Bot!"
+    Title: "Embed Response Test"
+    Footer: 
+      Text: "This test message was triggered by {author-username}"
+      Icon: "{author-avatar}"
+    Colour: "FFFFFF"
+    Author:
+      Name: "{author-username}"
+      Icon: "{author-avatar}" 
+      Url:  "https://padawanamy.com/"
+    Fields:
+      Field1:
+        Name: "Field 1"
+        Text: "This is the first field"
+        Inline: false
+      Field2:
+        Name: "Field 2"
+        Text: "This is the 2nd field"
+        Inline: true
+      Field3:
+        Name: "Field 3"
+        Text: "This is the 3rd field"
+        Inline: true
+  Triggers:
+  - "Embed Test"
+  Strict: true

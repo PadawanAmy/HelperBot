@@ -1,0 +1,9 @@
+Bot:
+  Token: "YOUR TOKEN HERE"
+  Prefix: "!"
+  Status:
+    Activity: watching
+    Text: over your server
+Ignore:
+  Channels: []
+  Categories: []
