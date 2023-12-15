@@ -16,7 +16,7 @@ HelperBot uses the Disnake library for Python.
    python Main
    ```
 5. When the bot starts there will be an Invite Link in the console, use it to invite your bot to a server.
-6. Head over to the wiki to learn how to use the bot!
+6. Head over to [the wiki](https://github.com/PadawanAmy/HelperBot/wiki) to learn how to use the bot!
 
 By default there are 3 example triggers, you can test the bot works by saying `helper bot test` in a text channel
 
