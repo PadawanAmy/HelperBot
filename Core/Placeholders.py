@@ -13,7 +13,6 @@ placeholder_map = {
     'author-status': ('interaction.user.status', 'author.status'),
     'author-toprole': ('interaction.member.top_role.name', 'author.top_role.name'),
     'author-joined': ('interaction.member.joined_at', 'author.joined_at'),
-    'author-firstjoin': ('', ''),
     'author-created': ('interaction.user.created_at', 'author.created_at'),
     'author-avatar': ('author.avatar.url', 'author.avatar.url'),
     
@@ -68,14 +67,6 @@ def read_config():
 
 config = read_config()
 
-def read_user_file(user_id):
-    file_path = f"Users/{user_id}.yml"
-    if os.path.exists(file_path):
-        with open(file_path, 'r') as file:
-            data = yaml.safe_load(file)
-            return data
-    return None
-
 def get_author_activity(context):
     if hasattr(context, 'interaction'):
         activities = context.interaction.user.activities
@@ -123,9 +114,6 @@ def get_placeholder_value(context, key, for_image=False):
         elif key == 'datetime-timestamp':
             timestamp = int(now.timestamp())
             return f"<t:{timestamp}:f>"
-    if key == 'author-firstjoin':
-        user_data = read_user_file(context.author.id)
-        return user_data.get('JoinedServer', 'Unknown') if user_data else 'Unknown'
     if key == 'author-mention':
         return f"<@{getattr(context.author, 'id', None)}>"
     attr_path = placeholder_map.get(key)
